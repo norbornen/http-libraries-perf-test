@@ -50,7 +50,7 @@ const ENDPOINT = `${HOST}/test`;
         suite.add('Superagent POST request', {
             defer: true,
             fn: (defer) => {
-                superagent.post(ENDPOINT).send().end(() => defer.resolve());
+                superagent.post(ENDPOINT).send().then(() => defer.resolve());
             }
         });
 

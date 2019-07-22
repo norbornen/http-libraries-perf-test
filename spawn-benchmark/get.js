@@ -48,7 +48,7 @@ const ENDPOINT = `${HOST}/test`;
         suite.add('Superagent GET request', {
             defer: true,
             fn: (defer) => {
-                superagent.get(ENDPOINT).end(() => defer.resolve());
+                superagent.get(ENDPOINT).then(() => defer.resolve());
             }
         });
 
