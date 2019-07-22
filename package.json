@@ -28,6 +28,7 @@
     "create-test-server": "^3.0.1",
     "got": "^9.6.0",
     "nock": "^10.0.6",
+    "phin": "^3.4.0",
     "request": "^2.75.0",
     "superagent": "^5.1.0"
   },

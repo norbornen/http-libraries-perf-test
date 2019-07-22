@@ -4,6 +4,7 @@ const axios = require('axios');
 const got = require('got');
 const superagent = require('superagent');
 const request = require('request');
+const phin = require('phin');
 
 const HOST = process.argv[ process.argv.length - 1 ];
 const ENDPOINT = `${HOST}/test`;
@@ -31,6 +32,20 @@ const ENDPOINT = `${HOST}/test`;
             }
         });
 
+        suite.add('Superagent GET request', {
+            defer: true,
+            fn: (defer) => {
+                superagent.get(ENDPOINT).then(() => defer.resolve());
+            }
+        });
+
+        suite.add('Request GET request', {
+            defer: true,
+            fn: (defer) => {
+                request(ENDPOINT, () => defer.resolve());
+            }
+        });
+
         suite.add('Axios GET request', {
             defer: true,
             fn: (defer) => {
@@ -45,17 +60,10 @@ const ENDPOINT = `${HOST}/test`;
             }
         });
 
-        suite.add('Superagent GET request', {
+        suite.add('Phin GET request', {
             defer: true,
             fn: (defer) => {
-                superagent.get(ENDPOINT).then(() => defer.resolve());
-            }
-        });
-
-        suite.add('Request GET request', {
-            defer: true,
-            fn: (defer) => {
-                request(ENDPOINT, () => defer.resolve());
+                phin(ENDPOINT).then(() => defer.resolve());
             }
         });
 
