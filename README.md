@@ -2,19 +2,24 @@
 
 My results:
 ```bash
-➜  http-libraries-perf-test git:(master) ✗ node index.js
-http.request POST request x 669 ops/sec ±3.15% (76 runs sampled)
-http.request GET request x 707 ops/sec ±2.95% (78 runs sampled)
-Axios POST request x 615 ops/sec ±4.42% (72 runs sampled)
-Axios GET request x 665 ops/sec ±3.38% (77 runs sampled)
-Got POST request x 509 ops/sec ±3.17% (76 runs sampled)
-Got GET request x 565 ops/sec ±3.45% (78 runs sampled)
-Superagent POST request x 693 ops/sec ±2.21% (77 runs sampled)
-Superagent GET request x 694 ops/sec ±2.16% (77 runs sampled)
-Request POST request x 527 ops/sec ±7.08% (66 runs sampled)
-Request GET request x 538 ops/sec ±8.93% (66 runs sampled)
+$ node index.js
 
-Fastest is "http.request GET request"
+http.request GET request x 776 ops/sec ±3.56% (73 runs sampled)
+Axios GET request x 746 ops/sec ±3.77% (70 runs sampled)
+Got GET request x 609 ops/sec ±2.84% (75 runs sampled)
+Superagent GET request x 872 ops/sec ±2.97% (78 runs sampled)
+Request GET request x 817 ops/sec ±2.92% (77 runs sampled)
+
+Fastest is "Superagent GET request"
+
+
+
+
+http.request POST request x 875 ops/sec ±2.81% (74 runs sampled)
+Axios POST request x 735 ops/sec ±4.06% (74 runs sampled)
+Got POST request x 629 ops/sec ±3.49% (75 runs sampled)
+Superagent POST request x 886 ops/sec ±2.32% (78 runs sampled)
+Request POST request x 792 ops/sec ±2.80% (74 runs sampled)
+
+Fastest is "Superagent POST request,http.request POST request"
 ```
-
-I'm not suprised that bare `http.request` is the fastest. But I can't explain why `axios` and `request` are so slow.
