@@ -4,22 +4,24 @@ My results:
 ```bash
 $ node index.js
 
-http.request GET request x 776 ops/sec ±3.56% (73 runs sampled)
-Axios GET request x 746 ops/sec ±3.77% (70 runs sampled)
-Got GET request x 609 ops/sec ±2.84% (75 runs sampled)
-Superagent GET request x 872 ops/sec ±2.97% (78 runs sampled)
-Request GET request x 817 ops/sec ±2.92% (77 runs sampled)
+http.request GET request x 813 ops/sec ±2.88% (75 runs sampled)
+Superagent GET request x 782 ops/sec ±3.37% (75 runs sampled)
+Request GET request x 802 ops/sec ±2.98% (76 runs sampled)
+Axios GET request x 805 ops/sec ±2.86% (76 runs sampled)
+Got GET request x 615 ops/sec ±3.34% (73 runs sampled)
+Phin GET request x 941 ops/sec ±2.32% (77 runs sampled)
 
-Fastest is "Superagent GET request"
+Fastest is "Phin GET request"
 
 
 
 
-http.request POST request x 883 ops/sec ±3.63% (75 runs sampled)
-Axios POST request x 741 ops/sec ±3.79% (73 runs sampled)
-Got POST request x 596 ops/sec ±2.98% (72 runs sampled)
-Superagent POST request x 872 ops/sec ±2.72% (76 runs sampled)
-Request POST request x 795 ops/sec ±3.14% (76 runs sampled)
+http.request POST request x 842 ops/sec ±3.46% (76 runs sampled)
+Superagent POST request x 821 ops/sec ±3.07% (74 runs sampled)
+Request POST request x 785 ops/sec ±3.27% (75 runs sampled)
+Axios POST request x 734 ops/sec ±4.19% (71 runs sampled)
+Got POST request x 585 ops/sec ±3.23% (73 runs sampled)
+Phin POST request x 957 ops/sec ±1.67% (80 runs sampled)
 
-Fastest is "http.request POST request,Superagent POST request"
+Fastest is "Phin POST request"
 ```
