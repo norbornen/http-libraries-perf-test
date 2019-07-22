@@ -17,7 +17,7 @@
     "performance"
   ],
   "author": "Nikita Korotkih",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/norbornen/http-libraries-perf-test/issues"
   },
