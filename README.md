@@ -5,7 +5,7 @@ My results:
 $ node index.js
 
 http.request GET request x 813 ops/sec ±2.88% (75 runs sampled)
-Superagent GET request x 782 ops/sec ±3.37% (75 runs sampled)
+Superagent GET request x 808 ops/sec ±3.25% (76 runs sampled)
 Request GET request x 802 ops/sec ±2.98% (76 runs sampled)
 Axios GET request x 805 ops/sec ±2.86% (76 runs sampled)
 Got GET request x 615 ops/sec ±3.34% (73 runs sampled)
