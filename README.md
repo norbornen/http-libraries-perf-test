@@ -15,11 +15,11 @@ Fastest is "Superagent GET request"
 
 
 
-http.request POST request x 875 ops/sec ±2.81% (74 runs sampled)
-Axios POST request x 735 ops/sec ±4.06% (74 runs sampled)
-Got POST request x 629 ops/sec ±3.49% (75 runs sampled)
-Superagent POST request x 886 ops/sec ±2.32% (78 runs sampled)
-Request POST request x 792 ops/sec ±2.80% (74 runs sampled)
+http.request POST request x 883 ops/sec ±3.63% (75 runs sampled)
+Axios POST request x 741 ops/sec ±3.79% (73 runs sampled)
+Got POST request x 596 ops/sec ±2.98% (72 runs sampled)
+Superagent POST request x 872 ops/sec ±2.72% (76 runs sampled)
+Request POST request x 795 ops/sec ±3.14% (76 runs sampled)
 
-Fastest is "Superagent POST request,http.request POST request"
+Fastest is "http.request POST request,Superagent POST request"
 ```
