@@ -23,14 +23,13 @@
   },
   "homepage": "https://github.com/norbornen/http-libraries-perf-test#readme",
   "dependencies": {
-    "axios": "^0.19.0",
-    "benchmark": "^2.1.1",
-    "create-test-server": "^3.0.1",
-    "got": "^9.6.0",
-    "nock": "^10.0.6",
-    "phin": "^3.4.0",
-    "request": "^2.75.0",
-    "superagent": "^5.1.0"
+    "axios": "latest",
+    "benchmark": "latest",
+    "create-test-server": "latest",
+    "got": "latest",
+    "phin": "latest",
+    "request": "latest",
+    "superagent": "latest"
   },
   "devDependencies": {
     "eslint": "^6.1.0",
