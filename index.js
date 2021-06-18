@@ -2,33 +2,32 @@ const createTestServer = require('create-test-server');
 const child_process = require('child_process');
 
 (async () => {
-    const server = await createTestServer({
-        bodyParser: {
-            type: () => false
-        }
-    });
-    server.get('/test', 'answer');
-    server.post('/test', (req, res) => res.send('answer'));
-
-    try {
-        for (const script of ['get', 'post']) {
-
-            await new Promise((resolve) => {
-                const workerProcess = child_process.spawn('node', [`./spawn-benchmark/${script}.js`, server.url]);
-                workerProcess.stdout.on('data', (data) => console.log(data.toString().replace(/\n$/g, '')));
-                workerProcess.stderr.on('data', (data) => console.log(`stderr: ${data}`));
-                workerProcess.on('close', (code) => {
-                    if (code != 0) {
-                        console.log('child process exited with code ' + code);
-                    }
-                    resolve();
-                });
-            });
-
-        }
-    } catch (err) {
-        console.error(err);
+  const server = await createTestServer({
+    bodyParser: {
+      type: () => false
     }
-    console.log('server close...');
-    await server.close();
+  });
+  server.get('/test', 'answer');
+  server.post('/test', (req, res) => res.send('answer'));
+
+  try {
+    for (const script of ['get', 'post']) {
+      await new Promise((resolve) => {
+        const workerProcess = child_process.spawn('node', [`./spawn-benchmark/${script}.js`, server.url]);
+        workerProcess.stdout.on('data', (data) => console.log(data.toString().replace(/\n$/g, '')));
+        workerProcess.stderr.on('data', (data) => console.log(`stderr: ${data}`));
+        workerProcess.on('close', (code) => {
+          if (code != 0) {
+            console.log('child process exited with code ' + code);
+          }
+          resolve();
+        });
+      });
+    }
+  } catch (err) {
+    console.error(err);
+  }
+
+  console.log('server close...');
+  await server.close();
 })();
