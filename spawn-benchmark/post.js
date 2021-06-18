@@ -5,6 +5,7 @@ const got = require('got');
 const superagent = require('superagent');
 const request = require('request');
 const phin = require('phin');
+const fetch = require('node-fetch');
 
 const HOST = process.argv[process.argv.length - 1];
 const ENDPOINT = `${HOST}/test`;
@@ -66,6 +67,13 @@ const ENDPOINT = `${HOST}/test`;
       defer: true,
       fn: (defer) => {
         phin({ url: ENDPOINT, method: 'POST' }).then(() => defer.resolve());
+      }
+    });
+
+    suite.add('NodeFetch POST request', {
+      defer: true,
+      fn: (defer) => {
+        fetch(ENDPOINT, { method: 'POST' }).then(() => defer.resolve());
       }
     });
 

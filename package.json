@@ -27,6 +27,8 @@
     "benchmark": "latest",
     "create-test-server": "latest",
     "got": "latest",
+    "ky": "latest",
+    "node-fetch": "latest",
     "phin": "latest",
     "request": "latest",
     "superagent": "latest"
