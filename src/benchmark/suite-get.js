@@ -22,7 +22,7 @@ const ENDPOINT = `${HOST}/test`;
     });
 
     const clientPath = path.join('src', 'benchmark', 'client');
-    for (const dir of (await readdir(clientPath)).reverse()) {
+    for (const dir of await readdir(clientPath)) {
       const module = await import(`./client/${dir}/index.js`);
       suite.add(`[GET]  ${dir}`, {
         defer: true,

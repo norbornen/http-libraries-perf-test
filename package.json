@@ -28,8 +28,8 @@
     "eslint": "latest",
     "eslint-plugin-import": "latest"
   },
-  "engines" : {
-    "node" : ">=16.0.0"
+  "engines": {
+    "node": ">=16.0.0"
   },
   "repository": {
     "type": "git",
