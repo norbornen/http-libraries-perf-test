@@ -1,5 +1,5 @@
-const createTestServer = require('create-test-server');
-const child_process = require('child_process');
+import createTestServer from 'create-test-server';
+import { spawn } from 'child_process';
 
 (async () => {
   const server = await createTestServer({
@@ -13,7 +13,7 @@ const child_process = require('child_process');
   try {
     for (const script of ['get', 'post']) {
       await new Promise((resolve) => {
-        const workerProcess = child_process.spawn('node', [`./spawn-benchmark/${script}.js`, server.url]);
+        const workerProcess = spawn('node', [`./spawn-benchmark/${script}.js`, server.url]);
         workerProcess.stdout.on('data', (data) => console.log(data.toString().replace(/\n$/g, '')));
         workerProcess.stderr.on('data', (data) => console.log(`stderr: ${data}`));
         workerProcess.on('close', (code) => {

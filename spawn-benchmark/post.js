@@ -1,11 +1,11 @@
-const Benchmark = require('benchmark');
-const http = require('http');
-const axios = require('axios');
-const got = require('got');
-const superagent = require('superagent');
-const request = require('request');
-const phin = require('phin');
-const fetch = require('node-fetch');
+import Benchmark from 'benchmark';
+import http from 'http';
+import axios from 'axios';
+import got from 'got';
+import superagent from 'superagent';
+import request from 'request';
+import phin from 'phin';
+import fetch from 'node-fetch';
 
 const HOST = process.argv[process.argv.length - 1];
 const ENDPOINT = `${HOST}/test`;
@@ -17,7 +17,7 @@ const ENDPOINT = `${HOST}/test`;
       onError: (e) => reject(e),
       onReset: (e) => reject(e),
       onCycle: (ev) => console.log(String(ev.target)),
-      onComplete: function(ev) {
+      onComplete: function(_ev) {
         const fastest = this.filter('fastest').map('name');
         console.log(`\nFastest is "${fastest}"\n`);
         resolve();
@@ -77,6 +77,9 @@ const ENDPOINT = `${HOST}/test`;
       }
     });
 
-    suite.run({ async: true });
+    suite.run({
+      async: true
+    });
+
   });
 })();
