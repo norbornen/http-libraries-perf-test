@@ -3,8 +3,9 @@
   "version": "0.0.2",
   "description": "Compare node.js http libraries performance",
   "main": "index.js",
+  "type": "module",
   "scripts": {
-    "start": "node index.js",
+    "start": "node --experimental-module index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -34,7 +35,9 @@
     "superagent": "latest"
   },
   "devDependencies": {
+    "@types/node": "^15.12.3",
     "eslint": "^7.28.0",
-    "eslint-config-google": "^0.14.0"
+    "eslint-config-google": "^0.14.0",
+    "eslint-plugin-import": "^2.23.4"
   }
 }
