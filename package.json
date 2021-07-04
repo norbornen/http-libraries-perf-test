@@ -1,34 +1,23 @@
 {
   "name": "http-libraries-perf-test",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Compare node.js http libraries performance",
-  "main": "index.js",
+  "main": "src/index.js",
   "type": "module",
   "scripts": {
-    "start": "node --experimental-module index.js",
+    "start": "node src/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/norbornen/http-libraries-perf-test.git"
-  },
-  "keywords": [
-    "axios",
-    "superagent",
-    "performance"
-  ],
-  "author": "Nikita Korotkih",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/norbornen/http-libraries-perf-test/issues"
-  },
-  "homepage": "https://github.com/norbornen/http-libraries-perf-test#readme",
   "dependencies": {
     "axios": "latest",
     "benchmark": "latest",
-    "create-test-server": "latest",
+    "fastify": "latest",
+    "fastify-formbody": "latest",
+    "fetch-h2": "latest",
+    "get-port": "latest",
     "got": "latest",
     "ky": "latest",
+    "ky-universal": "latest",
     "node-fetch": "latest",
     "phin": "latest",
     "request": "latest",
@@ -36,7 +25,32 @@
   },
   "devDependencies": {
     "@types/node": "^16.0.0",
-    "eslint": "^7.30.0",
-    "eslint-plugin-import": "^2.23.4"
-  }
+    "eslint": "latest",
+    "eslint-plugin-import": "latest"
+  },
+  "engines" : {
+    "node" : ">=16.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/norbornen/http-libraries-perf-test.git"
+  },
+  "author": "norbornen",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/norbornen/http-libraries-perf-test/issues"
+  },
+  "homepage": "https://github.com/norbornen/http-libraries-perf-test#readme",
+  "keywords": [
+    "performance",
+    "benchmark",
+    "http client",
+    "axios",
+    "superagent",
+    "request",
+    "got",
+    "ky",
+    "node-fetch",
+    "phin"
+  ]
 }

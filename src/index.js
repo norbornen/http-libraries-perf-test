@@ -1,19 +1,13 @@
-import createTestServer from 'create-test-server';
+import { app as server } from './test-server/index.js';
 import { spawn } from 'child_process';
+import path from 'path';
 
 (async () => {
-  const server = await createTestServer({
-    bodyParser: {
-      type: () => false
-    }
-  });
-  server.get('/test', 'answer');
-  server.post('/test', (req, res) => res.send('answer'));
-
   try {
     for (const script of ['get', 'post']) {
       await new Promise((resolve) => {
-        const workerProcess = spawn('node', [`./spawn-benchmark/${script}.js`, server.url]);
+        const workerScript = path.join('src', 'benchmark', `suite-${script}.js`);
+        const workerProcess = spawn('node', [workerScript, server.url]);
         workerProcess.stdout.on('data', (data) => console.log(data.toString().replace(/\n$/g, '')));
         workerProcess.stderr.on('data', (data) => console.log(`stderr: ${data}`));
         workerProcess.on('close', (code) => {
@@ -28,6 +22,5 @@ import { spawn } from 'child_process';
     console.error(err);
   }
 
-  console.log('server close...');
-  await server.close();
+  process.exit(0);
 })();
